@@ -9,8 +9,21 @@
       "recommended": true
     }
   },
+  "overrides": [
+    {
+      "include": ["packages/**"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noConsoleLog": "off"
+          }
+        }
+      }
+    }
+  ],
   "json": {
     "formatter": {
+      "enabled": true,
       "indentStyle": "space",
       "indentWidth": 2
     }
