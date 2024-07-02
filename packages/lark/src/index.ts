@@ -1,4 +1,1 @@
-export default function () {
-  console.log('hello world');
-  return 'hello world';
-}
+export { getThreadMessages, formatMessage } from './message';
