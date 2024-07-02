@@ -1,5 +1,5 @@
 {
-  "name": "@kyli/toolkit-lark",
+  "name": "@kyrieli/toolkit-lark",
   "version": "0.0.1",
   "types": "./dist/types/index.d.ts",
   "main": "./dist/lib/index.js",
@@ -13,6 +13,7 @@
     "upgrade": "modern upgrade",
     "test": "vitest run"
   },
+  "keywords": ["modern.js", "lark", "toolkit"],
   "eslintIgnore": ["node_modules/", "dist/"],
   "devDependencies": {
     "@larksuiteoapi/node-sdk": "^1.30.0",

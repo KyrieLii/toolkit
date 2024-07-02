@@ -33,3 +33,8 @@ tsconfig.json
 CHANGELOG.md
 
 **/*/api/typings/auto-generated
+
+.env
+.env.*
+
+vitest.config.ts
