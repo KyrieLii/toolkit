@@ -32,7 +32,6 @@ interface Message {
 }
 export const formatMessage = (item: ThreadItem): Message | undefined => {
   const { body, sender } = item;
-  console.log(item);
   const { id: senderId = '', sender_type: senderType = 'user' } = sender ?? {};
   const { content } = body ?? {};
 
@@ -49,14 +48,16 @@ export const formatMessage = (item: ThreadItem): Message | undefined => {
   let parsedContent: Content;
 
   try {
+    // skip system messages which cannot be parsed
     if (systemMessages.includes(content)) {
       return;
     }
     parsedContent = JSON.parse(content);
   } catch (err) {
     logger.error('Parse content error', content);
-    console.log('content', content);
-    throw new Error(`Parse content error ${err}`);
+    // Don't throw error here, because there are still many unknown system messages, needed skip.
+    // throw new Error(`Parse content error ${err}`);
+    return;
   }
 
   // text message
@@ -68,11 +69,11 @@ export const formatMessage = (item: ThreadItem): Message | undefined => {
     };
   }
 
+  // rich text
   if ('title' in parsedContent) {
-    // rich text
     const { title, content: contentList } = parsedContent;
-
     if (contentList && Array.isArray(contentList)) {
+      // group into one line
       const lineRes = [];
 
       for (const line of contentList) {
