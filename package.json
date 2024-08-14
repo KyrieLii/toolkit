@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "change": "changeset change",
-    "format:biome": "biome format **/*.{ts,tsx,json} --write",
-    "lint:biome": "biome lint **/*.{ts,tsx,json}"
+    "format": "biome format --write",
+    "lint": "biome lint"
   },
   "keywords": [],
   "author": "kyli",

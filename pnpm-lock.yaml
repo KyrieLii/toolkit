@@ -40,18 +40,6 @@ importers:
         specifier: ~5.0.4
         version: 5.0.4
 
-  packages/lark-toolkit:
-    devDependencies:
-      '@modern-js/module-tools':
-        specifier: 2.54.4
-        version: 2.54.4(typescript@5.0.4)
-      '@types/node':
-        specifier: ^20
-        version: 20.14.9
-      typescript:
-        specifier: ~5.0.4
-        version: 5.0.4
-
 packages:
 
   /@ampproject/remapping@2.3.0:
